@@ -1,0 +1,16 @@
+# Secrets — never commit
+DEEPSEEK_API_KEY.txt
+secrets.txt
+.env
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

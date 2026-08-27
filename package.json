@@ -1,0 +1,61 @@
+{
+  "name": "gameboost",
+  "version": "1.0.0",
+  "description": "GameBoost — a neumorphic Windows gaming optimizer built with Electron",
+  "main": "main.js",
+  "author": "Flexenzo Dev",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "rcedit": "^5.0.2"
+  },
+  "build": {
+    "appId": "com.flexenzodev.gameboost",
+    "productName": "GameBoost",
+    "copyright": "Copyright © 2026 Flexenzo Dev",
+    "asar": true,
+    "afterPack": "./afterPack.js",
+    "files": [
+      "main.js",
+      "preload.js",
+      "backend/**/*",
+      "renderer/**/*"
+    ],
+    "extraResources": [
+      "DEEPSEEK_API_KEY.txt"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "signtoolOptions": {
+        "publisherName": "Flexenzo Dev"
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "perMachine": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "shortcutName": "GameBoost"
+    }
+  }
+}
