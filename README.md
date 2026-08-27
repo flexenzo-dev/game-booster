@@ -11,7 +11,7 @@ to build a tailored optimization plan, then applies it all with a single button.
 
 Built with **Electron** (HTML/CSS/JS renderer + Node.js system backend), packaged
 with **electron-builder** into a native **NSIS** installer.
-
+**Note**: You have to type your deepseek api key on DEEPSEEK_API_KEY.txt
 ---
 
 ## 🤖 AI Optimize (DeepSeek)
